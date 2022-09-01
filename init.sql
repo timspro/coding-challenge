@@ -16,3 +16,6 @@ CREATE TABLE song_data (
   BreakoutMetric8 int,
   BreakoutMetric9 int
 );
+
+CREATE UNIQUE INDEX idx_example ON song_data(SongTitle, ArtistName, BreakoutName, BreakoutMetric1, BreakoutMetric2,
+BreakoutMetric3, BreakoutMetric4, BreakoutMetric5, BreakoutMetric6, BreakoutMetric7, BreakoutMetric8, BreakoutMetric9);

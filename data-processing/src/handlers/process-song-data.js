@@ -25,7 +25,7 @@ async function insertData(data) {
     port: 5432,
   })
   const query =
-    "INSERT INTO song_data (SongTitle,ArtistName,NonOvernightReplays,StationReplays,MarketReplays,BreakoutName,BreakoutMetric1,BreakoutMetric2,BreakoutMetric3,BreakoutMetric4,BreakoutMetric5,BreakoutMetric6,BreakoutMetric7,BreakoutMetric8,BreakoutMetric9) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)"
+    "INSERT INTO song_data (SongTitle,ArtistName,NonOvernightReplays,StationReplays,MarketReplays,BreakoutName,BreakoutMetric1,BreakoutMetric2,BreakoutMetric3,BreakoutMetric4,BreakoutMetric5,BreakoutMetric6,BreakoutMetric7,BreakoutMetric8,BreakoutMetric9) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) ON CONFLICT DO NOTHING"
   const client = await pool.connect()
   const promises = data.map((row) => client.query(query, row))
   await Promise.all(promises)

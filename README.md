@@ -23,6 +23,10 @@ SELECT COUNT(*) FROM song_data;
 
 The example query returns the number of rows in the database, which should be 880 (one less than number of lines in CSV).
 
+I assumed that song title, artist name, breakout name, and metrics uniquely identified a row in the CSV file to prevent duplicates.
+
+For simplicity, I added everything to one table. Songs could have been one table and then metrics another.
+
 ## api
 
 In `api` directory, run:
