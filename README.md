@@ -1,4 +1,4 @@
-# iheartmedia coding challenge
+# coding challenge
 
 First, run `docker-compose up -d` in project root to start the database.
 
