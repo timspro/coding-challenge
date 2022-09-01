@@ -1,0 +1,13 @@
+version: "2"
+services:
+  sam-postgres-db:
+    image: postgres
+    container_name: sam-postgres-db
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=tuZKQb5nVx
+      - POSTGRES_DB=song_data
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql

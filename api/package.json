@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "description": "api",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "@tim-code/eslint-config": "^0.6.5"
+  },
+  "eslintConfig": {
+    "extends": "@tim-code",
+    "root": true
+  }
+}

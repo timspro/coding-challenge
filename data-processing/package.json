@@ -1,0 +1,17 @@
+{
+  "name": "data-processing",
+  "description": "data processing",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "fast-csv": "^4.3.6",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "@tim-code/eslint-config": "^0.6.5"
+  },
+  "eslintConfig": {
+    "extends": "@tim-code",
+    "root": true
+  }
+}

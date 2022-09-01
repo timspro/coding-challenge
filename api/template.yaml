@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  api
+
+Transform:
+  - AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: nodejs14.x
+    Architectures:
+      - x86_64
+    MemorySize: 128
+    Timeout: 180
+    Environment:
+      Variables:
+        DB_HOST: host.docker.internal
+        DB_PASSWORD: tuZKQb5nVx
+        DB: song_data
+        DB_USER: dbuser
+
+Resources:
+  getQualifiedSongs:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/get-qualified-songs.getQualifiedSongs
+      Description: api example
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /get-qualified-songs
+            Method: POST
+
+Outputs:
+  WebEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

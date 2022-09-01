@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  data-processing
+
+Transform:
+  - AWS::Serverless-2016-10-31
+
+Resources:
+  processSongData:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/process-song-data.processSongData
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: data processing example
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Environment:
+        Variables:
+          DB_HOST: host.docker.internal
+          DB_PASSWORD: tuZKQb5nVx
+          DB: song_data
+          DB_USER: dbuser
